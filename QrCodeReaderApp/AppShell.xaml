@@ -4,11 +4,18 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:QrCodeReaderApp"
+    xmlns:toolkitBehaviors="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+    xmlns:toolkitCore="clr-namespace:CommunityToolkit.Maui.Core;assembly=CommunityToolkit.Maui.Core"
     Shell.FlyoutBehavior="Disabled"
-    Title="QrCodeReaderApp">
+    Title="Simple QR code reader">
+    <Shell.Behaviors>
+        <toolkitBehaviors:StatusBarBehavior
+              StatusBarStyle="{AppThemeBinding Light={Static toolkitCore:StatusBarStyle.DarkContent}, Dark={Static toolkitCore:StatusBarStyle.LightContent}}"
+              StatusBarColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+    </Shell.Behaviors>
 
     <ShellContent
-        Title="Home"
+        Title="Simple QR code reader"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
